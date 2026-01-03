@@ -22,6 +22,7 @@ rpm_platforms = ENV['RPM_PLATFORMS'] || 'el-8,el-9,el-10,sles-15,sles-16,amazon-
 # There is a circular dependency between clj-http-client and trapperkeeper-webserver-jetty10,
 # but only for tests, so the build *should* work.
 DEP_BUILD_ORDER = [
+  'clj-parent',
   'clj-kitchensink',
   'clj-i18n',
   'comidi',
@@ -29,7 +30,6 @@ DEP_BUILD_ORDER = [
   'clj-typesafe-config',
   'jruby-deps',
   'trapperkeeper',
-  'clj-parent',
   'trapperkeeper-filesystem-watcher',
   'trapperkeeper-webserver-jetty10',
   'ring-middleware',
